@@ -1,5 +1,5 @@
 {
-"name" : "Armorer Buff",
+"name" : "Armorer Buff Developer",
 "description" : "Buffs the Armorer perk deck.",
 "author" : "Oryo",
 "image" : "oryo.png",
