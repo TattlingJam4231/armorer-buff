@@ -16,7 +16,9 @@ function PlayerDamage:damage_bullet(attack_data)
 	local dmg_mul = pm:damage_reduction_skill_multiplier("bullet")
 	attack_data.damage = attack_data.damage * dmg_mul
 	
+	
 	attack_data.damage = pm:armorer_damage_reduction(attack_data.damage) --modded
+	
 	
 	attack_data.damage = managers.mutators:modify_value("PlayerDamage:TakeDamageBullet", attack_data.damage)
 	attack_data.damage = managers.modifiers:modify_value("PlayerDamage:TakeDamageBullet", attack_data.damage, attack_data.attacker_unit:base()._tweak_table)
@@ -36,6 +38,14 @@ function PlayerDamage:damage_bullet(attack_data)
 	if damage_absorption > 0 then
 		attack_data.damage = math.max(0, attack_data.damage - damage_absorption)
 	end
+	
+	
+	--modded
+	if pm.cocaine_stack_damage_reduction then
+		attack_data.damage = pm:cocaine_stack_damage_reduction(attack_data.damage)
+	end
+	--modded
+	
 
 	if self._god_mode then
 		if attack_data.damage > 0 then

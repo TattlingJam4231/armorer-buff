@@ -61,7 +61,7 @@ function UpgradesTweakData:_player_definitions(...)
 			category = "player"
 		}
 	}
-	self.values.player.armorer_damage_reduction_threshold_1 = {5.0}
-	self.values.player.armorer_damage_reduction_threshold_2 = {10.0}
-	self.values.player.armorer_damage_reduction_threshold_3 = {15.0}
+	self.values.player.armorer_damage_reduction_threshold_1 = {6.0}
+	self.values.player.armorer_damage_reduction_threshold_2 = {12.0}
+	self.values.player.armorer_damage_reduction_threshold_3 = {18.0}
 end
